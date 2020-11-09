@@ -38,21 +38,14 @@ public class CrearComputadoraUseCaseUnitTest {
     }
 
     @Test
-    public void crearComputadora_ComputadoraExiste_ComputadoraExisteException(){
-
-
+    public void crearComputadora_ComputadoraExiste_ComputadoraExisteException() throws ComputadoraExisteException {
 
         Computadora laComputadora=Computadora.instancia("I310401000GB16GB","Core I3 1040",1000,"SSD",16,"PC");
         CrearComputadoraUseCase crearComputadoraUseCase=new CrearComputadoraUseCase(computadoraRepositorio);
 
-
-        when(computadoraRepositorio.existeComputadora("I310401000GB16GB")).thenReturn(true);
-
-
+        when(computadoraRepositorio.existeComputadora(laComputadora.getI310401000GB16GB())).thenReturn(true);
 
         Assertions.assertThrows(ComputadoraExisteException.class, ()->crearComputadoraUseCase.crearcomputadora(laComputadora));
 
     }
-
-
 }
