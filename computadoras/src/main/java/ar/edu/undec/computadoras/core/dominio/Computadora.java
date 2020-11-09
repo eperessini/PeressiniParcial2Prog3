@@ -1,5 +1,6 @@
 package ar.edu.undec.computadoras.core.dominio;
 
+
 public class Computadora {
 
     private String i310401000GB16GB;
