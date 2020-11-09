@@ -3,15 +3,12 @@ package ar.edu.undec.computadoras.persistencia.entity;
 import javax.persistence.*;
 
 @Entity (name="computadoras")
-@SequenceGenerator(name="pets_id_seq", initialValue = 1, sequenceName = "computadoras_id_seq", allocationSize = 1)
-
-
+@SequenceGenerator(name="computadoras_id_seq", initialValue = 1, sequenceName = "computadoras_id_seq", allocationSize = 1)
 public class ComputadoraEntity {
-
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "computadoras_id_seq")
 
     @Id
     @Column (name="i310401000GB16GB")
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "computadoras_id_seq")
     private String i310401000GB16GB;
 
     @Column (name="s")
@@ -26,7 +23,7 @@ public class ComputadoraEntity {
     private String pc;
 
 
-    public ComputadoraEntity(String i310401000GB16GB, String s, int i, String ssd, int i1, String pc) {}
+    public ComputadoraEntity() {}
 
     public String getI310401000GB16GB() {
         return i310401000GB16GB;
