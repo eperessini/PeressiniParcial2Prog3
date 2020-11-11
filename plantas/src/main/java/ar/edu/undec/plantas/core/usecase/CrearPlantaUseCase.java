@@ -10,9 +10,8 @@ public class CrearPlantaUseCase implements ICrearPlantaRepositorio {
         this.iCrearPlantaRepositorio = plantaRepositorio;
     }
 
-
     @Override
-    public boolean existePlanta(Planta laPlanta) {
+    public boolean existePlanta(String plantaNombre) {
         return false;
     }
 

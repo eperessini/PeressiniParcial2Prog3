@@ -2,6 +2,7 @@ package ar.edu.undec.plantas.usecaseUnitTest;
 
 import ar.edu.undec.plantas.core.dominio.ICrearPlantaRepositorio;
 import ar.edu.undec.plantas.core.dominio.Planta;
+import ar.edu.undec.plantas.core.exception.PlantaExisteException;
 import ar.edu.undec.plantas.core.usecase.CrearPlantaUseCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,8 +24,6 @@ public class CrearPlantaUseCaseUnitTest {
 
         when(crearPlantaRepositorio.existePlanta("Erythrina crista-galli")).thenReturn(false);
         when(crearPlantaRepositorio.guardarPlanta(laPlanta)).thenReturn(true);
-
-
 
 
         boolean resultado=crearPlantaUseCase.crearPlanta(laPlanta);
