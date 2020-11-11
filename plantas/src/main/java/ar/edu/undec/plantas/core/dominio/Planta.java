@@ -3,19 +3,19 @@ package ar.edu.undec.plantas.core.dominio;
 public class Planta {
 
     private String nombreCientifico;
-    private String nombre;
-    private String subfamilia;
-    private String estacion;
-    private int tamanio;
+    private String nombreVulgar;
+    private String categoria;
+    private String epocaPlantado;
+    private int altura;
 
     public Planta() {}
 
-    public Planta(String nombreCientifico, String nombre, String subfamilia, String estacion, int tamanio) {
+    public Planta(String nombreCientifico, String nombreVulgar, String subfamilia, String estacion, int tamanio) {
         this.nombreCientifico = nombreCientifico;
-        this.nombre = nombre;
-        this.subfamilia = subfamilia;
-        this.estacion = estacion;
-        this.tamanio = tamanio;
+        this.nombreVulgar = nombreVulgar;
+        this.categoria = subfamilia;
+        this.epocaPlantado = estacion;
+        this.altura = tamanio;
     }
 
     public String getNombreCientifico() {
@@ -26,40 +26,40 @@ public class Planta {
         this.nombreCientifico = nombreCientifico;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreVulgar() {
+        return nombreVulgar;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreVulgar(String nombreVulgar) {
+        this.nombreVulgar = nombreVulgar;
     }
 
-    public String getSubfamilia() {
-        return subfamilia;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public void setSubfamilia(String subfamilia) {
-        this.subfamilia = subfamilia;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
-    public String getEstacion() {
-        return estacion;
+    public String getEpocaPlantado() {
+        return epocaPlantado;
     }
 
-    public void setEstacion(String estacion) {
-        this.estacion = estacion;
+    public void setEpocaPlantado(String epocaPlantado) {
+        this.epocaPlantado = epocaPlantado;
     }
 
-    public int getTamanio() {
-        return tamanio;
+    public int getAltura() {
+        return altura;
     }
 
-    public void setTamanio(int tamanio) {
-        this.tamanio = tamanio;
+    public void setAltura(int altura) {
+        this.altura = altura;
     }
 
-    public static Planta instancia(String nombreCientifico, String nombre, String subfamilia, String estacion, int tamanio) {
-        return false;
+    public static Planta instancia(String nombreCientifico, String nombreVulgar, String categoria, String epocaPlantado, int altura) {
+        return new Planta(nombreCientifico, nombreVulgar, categoria, epocaPlantado, altura);
     }
 }
 
