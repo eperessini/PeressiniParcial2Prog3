@@ -37,6 +37,10 @@ public class CrearPlantaUseCaseUnitTest {
         CrearPlantaUseCase crearPlantaUseCase=new CrearPlantaUseCase(crearPlantaRepositorio);
 
 
+        when(crearPlantaRepositorio.existePlanta("Erythrina crista-galli")).thenReturn(false);
+
+        Assertions.assertThrows(PlantaExisteException.class, ()->crearPlantaUseCase.crearPlanta(laPlanta));
+
     }
 
 
