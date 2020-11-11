@@ -1,5 +1,6 @@
 package ar.edu.undec.plantas.usecaseUnitTest;
 
+import ar.edu.undec.plantas.core.dominio.Planta;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,10 +17,16 @@ public class CrearPlantaUseCaseUnitTest {
     @Test
     public void crearPlanta_PlantaNoExiste_CreaPlanta() throws PlantaExisteException {
         Planta laPlanta=Planta.instancia("Erythrina crista-galli","Ceibo","Faboideae","Primavera",10);
+        CrearPlantaUseCase crearPlantaUseCase=new CrearPlantaUseCase(crearPlantaRepositorio);
+
         when(crearPlantaRepositorio.existePlanta("Erythrina crista-galli")).thenReturn(false);
         when(crearPlantaRepositorio.guardarPlanta(laPlanta)).thenReturn(true);
-        CrearPlantaUseCase crearPlantaUseCase=new CrearPlantaUseCase(crearPlantaRepositorio);
+
+
+
+
         boolean resultado=crearPlantaUseCase.crearPlanta(laPlanta);
+
         Assertions.assertTrue(resultado);
     }
 

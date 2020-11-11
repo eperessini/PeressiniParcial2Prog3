@@ -31,6 +31,9 @@ public class CrearComputadoraController {
             ComputadoraExiste.printStackTrace();
             return ResponseEntity.status(HttpStatus.PRECONDITION_FAILED).body(ComputadoraExiste.getMessage());
         }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error en el servidor");
+        }
 
     }
 
