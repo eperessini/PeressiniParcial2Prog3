@@ -1,6 +1,6 @@
 package ar.edu.undec.plantas.usecaseUnitTest;
 
-import ar.edu.undec.plantas.core.usecase.ConsultarPlantasUseCase;
+//import ar.edu.undec.plantas.core.usecase.ConsultarPlantasUseCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,7 +13,7 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class ConsultarPlantasUseCaseUnitTest {
-
+/*
 
     @Mock
     IConsultarPlantasRepositorio consultarPlantasRepositorio;
@@ -29,4 +29,6 @@ public class ConsultarPlantasUseCaseUnitTest {
     void consultarPlantas_NoExistenPlantas_DevuelveColeccionVacia(){
         //Completar test
     }
+
+ */
 }

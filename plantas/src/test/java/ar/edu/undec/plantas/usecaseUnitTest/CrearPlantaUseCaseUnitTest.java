@@ -31,13 +31,13 @@ public class CrearPlantaUseCaseUnitTest {
     }
 
     @Test
-    public void crearPlanta_PlantaExiste_PlantaExisteException(){
+    public void crearPlanta_PlantaExiste_PlantaExisteException() throws PlantaExisteException{
 
         Planta laPlanta=Planta.instancia("Erythrina crista-galli","Ceibo","Faboideae","Primavera",10);
         CrearPlantaUseCase crearPlantaUseCase=new CrearPlantaUseCase(crearPlantaRepositorio);
 
 
-        when(crearPlantaRepositorio.existePlanta("Erythrina crista-galli")).thenReturn(false);
+        when(crearPlantaRepositorio.existePlanta("Erythrina crista-galli")).thenReturn(true);
 
         Assertions.assertThrows(PlantaExisteException.class, ()->crearPlantaUseCase.crearPlanta(laPlanta));
 
