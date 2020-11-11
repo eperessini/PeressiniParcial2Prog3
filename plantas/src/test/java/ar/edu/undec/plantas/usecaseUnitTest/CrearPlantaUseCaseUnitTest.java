@@ -25,7 +25,6 @@ public class CrearPlantaUseCaseUnitTest {
         when(crearPlantaRepositorio.existePlanta("Erythrina crista-galli")).thenReturn(false);
         when(crearPlantaRepositorio.guardarPlanta(laPlanta)).thenReturn(true);
 
-
         boolean resultado=crearPlantaUseCase.crearPlanta(laPlanta);
 
         Assertions.assertTrue(resultado);
@@ -33,7 +32,9 @@ public class CrearPlantaUseCaseUnitTest {
 
     @Test
     public void crearPlanta_PlantaExiste_PlantaExisteException(){
-        //Completar Test
+
+        Planta laPlanta=Planta.instancia("Erythrina crista-galli","Ceibo","Faboideae","Primavera",10);
+        CrearPlantaUseCase crearPlantaUseCase=new CrearPlantaUseCase(crearPlantaRepositorio);
 
 
     }
